@@ -7,8 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class GetBreweryDataService {
   constructor(private http: HttpClient) {}
 
-  getData() {
+  getData(brewType?: string) {
     let baseUrl = 'https://api.openbrewerydb.org/breweries?by_city=milwaukee';
+    if (brewType) {
+      baseUrl = baseUrl.concat(`&by_type=${brewType}`);
+    }
 
     return this.http.get(baseUrl);
   }

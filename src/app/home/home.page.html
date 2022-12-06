@@ -5,13 +5,17 @@
     </div>
     <div class="drop-down">
       <ion-item>
-        <ion-select interface="popover" placeholder="Select type of breweries">
+        <ion-select
+          (ionChange)="selectType($event)"
+          interface="popover"
+          placeholder="Select type of breweries"
+        >
           <ion-select-option value="micro">Micro</ion-select-option>
           <ion-select-option value="nano">Nano</ion-select-option>
           <ion-select-option value="large">Large</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button>Clear</ion-button>
+      <ion-button (click)="getBrewData()">Clear</ion-button>
     </div>
     <div class="cards">
       <div class="card" *ngFor="let card of cards">

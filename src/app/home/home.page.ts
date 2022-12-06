@@ -17,11 +17,11 @@ export class HomePage implements OnInit {
   cards: ICardValue[] = [];
   constructor(private getBreweryData: GetBreweryDataService) {}
   ngOnInit() {
-    this._getBrewData();
+    this.getBrewData();
   }
 
-  private _getBrewData() {
-    this.getBreweryData.getData().subscribe((data: ICardValue[]) => {
+  getBrewData(type?: string) {
+    this.getBreweryData.getData(type).subscribe((data: ICardValue[]) => {
       this.cards = [];
       data.map((cardData: ICardValue) => {
         const card = {
@@ -34,6 +34,11 @@ export class HomePage implements OnInit {
         this.cards.push(card);
       });
     });
+  }
+
+  selectType(event) {
+    this.getBrewData(event.detail.value);
+    console.log(event.detail.value);
   }
 
   formatPhoneNumber(phoneNumberString: string) {
