@@ -28,11 +28,20 @@ export class HomePage implements OnInit {
           name: cardData.name,
           brewery_type: cardData.brewery_type,
           street: cardData.street,
-          phone: cardData.phone,
+          phone: this.formatPhoneNumber(cardData.phone),
           website_url: cardData.website_url,
         };
         this.cards.push(card);
       });
     });
+  }
+
+  formatPhoneNumber(phoneNumberString: string) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+    }
+    return null;
   }
 }
