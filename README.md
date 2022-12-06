@@ -38,7 +38,7 @@ https://www.openbrewerydb.org/documentation
 
 ### Description
 
-This project is to fetch all the breweries present in Milwakee and user can filter breweries with its
+This project is to fetch all the breweries present in Milwakee and user can filter breweries with its Type with a dropdown slection
 
 ### Author
 
