@@ -10,9 +10,9 @@
           interface="popover"
           placeholder="Select type of breweries"
         >
-          <ion-select-option value="micro">Micro</ion-select-option>
-          <ion-select-option value="nano">Nano</ion-select-option>
-          <ion-select-option value="large">Large</ion-select-option>
+          <ion-select-option *ngFor="let type of breweryType" [value]="type"
+            >{{type}}</ion-select-option
+          >
         </ion-select>
       </ion-item>
       <ion-button (click)="getBrewData()">Clear</ion-button>
@@ -21,6 +21,7 @@
       <div class="card" *ngFor="let card of cards">
         <app-brewery-card [cardData]="card"></app-brewery-card>
       </div>
+      <p *ngIf="cards.length===0">Sorry No Brewery found with this type</p>
     </div>
     <div class="footer">
       Made by Abbas |

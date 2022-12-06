@@ -8,6 +8,7 @@ export interface ICardValue {
   phone: string;
   website_url?: string;
 }
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -15,6 +16,18 @@ export interface ICardValue {
 })
 export class HomePage implements OnInit {
   cards: ICardValue[] = [];
+  breweryType = [
+    'micro',
+    'nano',
+    'regional',
+    'brewpub',
+    'large',
+    'planning',
+    'bar',
+    'contract',
+    'proprietor',
+    'closed',
+  ];
   constructor(private getBreweryData: GetBreweryDataService) {}
   ngOnInit() {
     this.getBrewData();
