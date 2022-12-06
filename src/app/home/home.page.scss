@@ -20,7 +20,16 @@
     display: flex;
     gap: 20px;
   }
-
+  .cards {
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    .card {
+      width: 20rem;
+    }
+  }
   .footer {
     background-color: rebeccapurple;
     padding: 2rem;

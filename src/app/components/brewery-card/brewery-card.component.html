@@ -1,0 +1,24 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ cardData.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="row">
+      <p class="bold">Brew type:</p>
+      <p>{{ cardData.brewery_type }}</p>
+    </div>
+    <div class="row">
+      <p class="bold">Street:</p>
+      <p>{{ cardData.street }}</p>
+    </div>
+    <div class="row">
+      <p class="bold">phone:</p>
+      <p>{{ cardData.phone }}</p>
+    </div>
+    <div *ngIf="cardData.website_url" class="row">
+      <p class="bold">Website:</p>
+      <p>{{ cardData.website_url }}</p>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,16 @@
+ion-card {
+  ion-card-title {
+    font-size: 1.3rem;
+  }
+  height: 100%;
+  .row {
+    margin-top: 0.6rem;
+
+    display: flex;
+    .bold {
+      font-weight: 700;
+      margin-right: 0.5rem;
+      color: rgb(237, 230, 216);
+    }
+  }
+}
