@@ -14,11 +14,12 @@
     </div>
     <div class="row">
       <p class="bold">phone:</p>
-      <p>{{ cardData.phone }}</p>
+      <a [attr.href]="'tel:' + cardData.phone">{{ cardData.phone }}</a>
     </div>
     <div *ngIf="cardData.website_url" class="row">
       <p class="bold">Website:</p>
-      <p>{{ cardData.website_url }}</p>
+
+      <a [attr.href]="cardData.website_url">{{ cardData.website_url }}</a>
     </div>
   </ion-card-content>
 </ion-card>
